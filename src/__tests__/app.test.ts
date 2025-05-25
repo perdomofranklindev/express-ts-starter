@@ -15,9 +15,7 @@ describe('API Endpoints', () => {
   });
 
   it('POST /api/greet - should greet with provided name', async () => {
-    const res = await request(app)
-      .post('/api/greet')
-      .send({ name: 'John' });
+    const res = await request(app).post('/api/greet').send({ name: 'John' });
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveProperty('message', 'Hello, John!');
   });
